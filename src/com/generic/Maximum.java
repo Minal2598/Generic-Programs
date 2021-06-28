@@ -1,15 +1,30 @@
 package com.generic;
 
-public class Maximum {
+public class Maximum <T extends Comparable> {
+    T var1, var2, var3;
+
+    public Maximum(T var1, T var2, T var3) {
+        this.var1 = var1;
+        this.var2 = var2;
+        this.var3 = var3;
+    }
+
+
+
     public static void  main(String[] args) {
         System.out.println("Welcome to Generic Program.");
         Integer a = 2, b = 4, c =6;
         Float x = 2.3f, y =7.8f , z = 6.7f;
         String l = "Apple" , m = "Banana" , n = "Orange";
+        
+        new Maximum<>(a,b,c).max();
+        new Maximum<>(x,y,z).max();
+        new Maximum<>(l,m,n).max();
+    }
 
-        Maximum.getMaximum(a,b,c);
-        Maximum.getMaximum(x,y,z);
-        Maximum.getMaximum(l,m,n);
+    private void max() {
+        Maximum.getMaximum(var1,var2,var3);
+
     }
 
     private static <T extends Comparable> void getMaximum(T a, T b, T c) {
@@ -29,6 +44,6 @@ public class Maximum {
 
 
 
-    
+
 
 }
